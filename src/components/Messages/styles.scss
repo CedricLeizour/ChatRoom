@@ -1,0 +1,32 @@
+@use 'src/styles/vars';
+
+.messages {
+  padding: 2em;
+  flex: 1;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+.message {
+  text-align: right;
+  margin-bottom: 2rem;
+  
+  &__author {
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+    display: block;
+    
+  }
+
+  &__body {
+    background-color: vars.$light-color ;
+    padding: 1.5em;
+    display: inline-block;
+    border-radius: 1.5rem;
+  
+  & &--other {
+    text-align: left;
+  }
+  }
+}
