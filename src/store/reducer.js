@@ -4,19 +4,19 @@ const INITIAL_STATE = {
     id: 1,
     author: 'Super Chat',
     message: 'Salut, ça va ?',
-    isOther: false,
+    isOther: true,
   },
   {
     id: 2,
     author: 'Super Chat',
     message: 'Salut, t\'as pas des super croquettes ?',
-    isOther: false,
+    isOther: true,
   },
   {
     id: 3,
     author: 'Super Chat',
     message: 'Stp !',
-    isOther: false,
+    isOther: true,
   }],
 };
 const reducer = (state = INITIAL_STATE, action) => {
