@@ -17,6 +17,12 @@ const INITIAL_STATE = {
     author: 'Super Chat',
     message: 'Stp !',
     isOther: true,
+  },
+  {
+    id: 4,
+    author: 'Me',
+    message: 'Je peux pas, j\'ai un chat dans la gorge !',
+    isOther: false,
   }],
 };
 const reducer = (state = INITIAL_STATE, action) => {
