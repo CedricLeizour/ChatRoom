@@ -4,7 +4,7 @@ import {
 } from 'src/actions';
 
 import {
-  getHighestId
+  getHighestId,
 } from 'src/selectors';
 
 const INITIAL_STATE = {

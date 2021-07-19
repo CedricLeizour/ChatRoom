@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Send } from 'react-feather';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import { setMessageValue } from '../../actions';
 
 const Form = ({ inputValue, setMessageValue, sendNewMessage }) => {
+
+  const inputRef = useRef(null);
   const handleOnSubmitForm = (event) => {
     event.preventDefault();
     sendNewMessage();
@@ -12,6 +14,10 @@ const Form = ({ inputValue, setMessageValue, sendNewMessage }) => {
   const handleOnInputChange = (event) => {
     setMessageValue(event.target.value);
   };
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
   <form className="form" onSubmit={handleOnSubmitForm}>
@@ -21,6 +27,7 @@ const Form = ({ inputValue, setMessageValue, sendNewMessage }) => {
   value= {inputValue}
   onChange={handleOnInputChange} 
   placeholder="Saisissez votre message"
+  ref={inputRef}
   />
   <button type submit="submit" className="form__submit">
     <Send size={32} />
