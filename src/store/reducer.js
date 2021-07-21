@@ -9,29 +9,26 @@ import {
 
 const INITIAL_STATE = {
   currentMessage: '',
+  pseudo: 'Me',
   messages: [{
     id: 1,
     author: 'Super Chat',
-    message: 'Salut, ça va ?',
-    isOther: true,
+    message: 'Salut Cédric !',
   },
   {
     id: 2,
     author: 'Super Chat',
-    message: 'Salut, t\'as pas des super croquettes ?',
-    isOther: true,
+    message: 'Montres moi ce que tu sais faire avec React.',
   },
   {
     id: 3,
     author: 'Super Chat',
-    message: 'Stp !',
-    isOther: true,
+    message: 'Stp ;)',
   },
   {
     id: 4,
     author: 'Me',
-    message: 'Je peux pas, j\'ai un chat dans la gorge !',
-    isOther: false,
+    message: 'Ok, let\'s go !',
   }],
 };
 const reducer = (state = INITIAL_STATE, action) => {
@@ -48,7 +45,7 @@ const reducer = (state = INITIAL_STATE, action) => {
           ...state.messages,
           {
             id: (getHighestId(state.messages) + 1),
-            author: 'Me',
+            author: state.pseudo,
             message: state.currentMessage,
             isOther: false,
           },

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import Message from './Message';
+import Message from 'src/containers/Messages/Message';
 import './styles.scss';
 
 const Messages = ({ messages }) => {
