@@ -18,7 +18,7 @@ const INITIAL_STATE = {
   {
     id: 2,
     author: 'Super Chat',
-    message: 'Montres moi ce que tu sais faire avec React.',
+    message: 'Montre-moi ce que tu sais faire avec React.',
   },
   {
     id: 3,
