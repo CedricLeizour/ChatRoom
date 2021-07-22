@@ -2,6 +2,8 @@ import {
   SET_MESSAGE_VALUE,
   SEND_NEW_MESSAGE,
   TOGGLE_SETTINGS,
+  SET_EMAIL_VALUE,
+  SET_PASSWORD_VALUE,
 } from 'src/actions';
 
 import {
@@ -11,6 +13,8 @@ import {
 const INITIAL_STATE = {
   settings: {
     open: false,
+    email: '',
+    password: '',
   },
   currentMessage: '',
   pseudo: 'Me',
@@ -62,6 +66,22 @@ const reducer = (state = INITIAL_STATE, action) => {
         settings: {
           ...state.settings,
           open: !state.settings.open,
+        },
+      };
+    case SET_EMAIL_VALUE:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          email: action.value,
+        },
+      };
+    case SET_PASSWORD_VALUE:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          password: action.value,
         },
       };
     default:
