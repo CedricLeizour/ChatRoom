@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import InputEmail from 'src/containers/Settings/inputEmail';
-import InputPassword from 'src/containers/Settings/inputPassword';
+import InputField from 'src/containers/Settings/InputField';
 
 import './styles.scss';
 
@@ -10,8 +9,17 @@ const Settings = ({ open, openToggle }) => (
   <div className={classNames('settings', { 'settings--active': open })}>
     <button type="button" onClick={openToggle}>+</button>
     <form>
-      <InputEmail />
-      <InputPassword />
+      <InputField
+        inputName="email"
+        type="email"
+        placeholder="Adresse email"
+      />
+      <InputField
+        inputName="password"
+        type="password"
+        autoComplete="new-password"
+        placeholder="Mot de passe"
+      />
       <button type="submit">Envoyer</button>
     </form>
   </div>
