@@ -3,6 +3,8 @@ import {
   SEND_NEW_MESSAGE,
   TOGGLE_SETTINGS,
   SET_FIELD_VALUE,
+  SEND_LOGIN,
+  SET_PSEUDO,
 
 } from 'src/actions';
 
@@ -15,6 +17,7 @@ const INITIAL_STATE = {
     open: false,
     email: '',
     password: '',
+    loading: false,
   },
   currentMessage: '',
   pseudo: 'Me',
@@ -75,6 +78,23 @@ const reducer = (state = INITIAL_STATE, action) => {
           ...state.settings,
           [action.fieldName]: action.value,
         },
+      };
+    case SEND_LOGIN:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          loading: true,
+        },
+      };
+    case SET_PSEUDO:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          loading: false,
+        },
+        pseudo: action.pseudo,
       };
     default:
       return state;
