@@ -1,3 +1,4 @@
+  
 const paths = require('./paths');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -73,6 +74,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'sound/',
+          name: '[path][name].[ext]',
+        },
+      }
     ],
   },
 };

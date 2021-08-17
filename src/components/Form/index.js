@@ -9,7 +9,9 @@ const Form = ({ inputValue, setMessageValue, sendNewMessage }) => {
   const inputRef = useRef(null);
   const handleOnSubmitForm = (event) => {
     event.preventDefault();
+    if (inputValue !=='') {
     sendNewMessage();
+    }
   }
   const handleOnInputChange = (event) => {
     setMessageValue(event.target.value);

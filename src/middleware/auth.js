@@ -9,6 +9,7 @@ import axios from 'src/api';
 
 export default (store) => (next) => (action) => {
   const { settings: { email, password } } = store.getState();
+
   switch (action.type) {
     case SEND_LOGIN:
       axios.post('/login', {
@@ -20,12 +21,12 @@ export default (store) => (next) => (action) => {
       next(action);
       break;
     case SET_PSEUDO:
-      axios.get(`/theme/${email}`, {
-      }).then((result) => {
-        store.dispatch(setColor(result.data.color));
-      });
-    next(action);
-    break;
+      axios.get(`/theme/${email}`)
+        .then((result) => {
+          store.dispatch(setColor(result.data.color));
+        });
+      next(action);
+      break;
     default:
       next(action);
       break;

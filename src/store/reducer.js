@@ -1,6 +1,6 @@
 import {
   SET_MESSAGE_VALUE,
-  SEND_NEW_MESSAGE,
+  ADD_MESSAGE,
   TOGGLE_SETTINGS,
   SET_FIELD_VALUE,
   SEND_LOGIN,
@@ -8,10 +8,6 @@ import {
   SET_COLOR,
 
 } from 'src/actions';
-
-import {
-  getHighestId,
-} from 'src/selectors';
 
 const INITIAL_STATE = {
   settings: {
@@ -51,15 +47,15 @@ const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentMessage: action.inputValue,
       };
-    case SEND_NEW_MESSAGE:
+    case ADD_MESSAGE:
       return {
         ...state,
         messages: [
           ...state.messages,
           {
-            id: (getHighestId(state.messages) + 1),
-            author: state.pseudo,
-            message: state.currentMessage,
+            id: action.id,
+            author: action.author,
+            message: action.message,
             isOther: false,
           },
         ],

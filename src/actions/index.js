@@ -1,11 +1,13 @@
 // Actions Types
 export const SET_MESSAGE_VALUE = 'SET_MESSAGE_VALUE';
 export const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
+export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 export const SEND_LOGIN = 'SEND_LOGIN';
 export const SET_PSEUDO = 'SET_PSEUDO';
 export const SET_COLOR = 'SET_COLOR';
+export const WS_CONNECT = 'WS_CONNECT';
 
 // Actions Creators
 export const setMessageValue = (inputValue) => ({
@@ -15,6 +17,13 @@ export const setMessageValue = (inputValue) => ({
 
 export const sendNewMessage = () => ({
   type: SEND_NEW_MESSAGE,
+});
+
+export const addMessage = (id, author, message) => ({
+  type: ADD_MESSAGE,
+  id,
+  author,
+  message,
 });
 
 export const toggleSettings = () => ({
@@ -39,4 +48,8 @@ export const setPseudo = (pseudo) => ({
 export const setColor = (color) => ({
   type: SET_COLOR,
   color,
+});
+
+export const wsConnect = () => ({
+  type: WS_CONNECT,
 });
