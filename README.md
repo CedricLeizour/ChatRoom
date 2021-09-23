@@ -6,7 +6,7 @@ Projet ChatRoom - React Redux
 - start `yarn start` : http://localhost:8080
 
 
-Pour pouvoir tester la Chatroom, clonez le repo suivant :
+Pour pouvoir tester la Chatroom, clonez également le repo suivant :
 
 https://github.com/CedricLeizour/Server-Chatroom
 
